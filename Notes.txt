@@ -1,0 +1,47 @@
+
+	************************************
+    *  Consumer - Predicate - Supplier *
+	************************************
+
+
+   Consumer Functional interface:
+   ===============================
+
+-- Consumer<T> is an in built functional interface introduced in Java8.
+
+-- Consumer can be used in all contexts where an obkject needs to be consumed
+
+-- i.e. taken as input, and some operation is to be performed on the object without returning any result
+
+-- Performs this option on given argument
+
+-- @param t is the input argument
+
+-- void accept(T t);
+
+
+	Predicate Functional interface:
+	===============================
+
+-- Predicate is a functional interface used for conditional check
+
+-- i.e. when we need to return a boolean
+
+-- @param t is the input argument
+
+-- boolean Test(T t);
+
+
+	Supplier Functional interface
+	===============================
+
+-- Supplier can be used in all contexts where there is no input but an output is expected
+
+-- Gets a result
+
+-- @return a result
+
+-- T get();
+
+
+

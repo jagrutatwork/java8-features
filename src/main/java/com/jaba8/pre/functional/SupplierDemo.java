@@ -35,5 +35,6 @@ public class SupplierDemo implements Supplier<String>{
 		System.out.println(list.stream().count());
 		
 		System.out.println(list2.stream().findAny().orElseGet(supplier1));
+		
 	}
 }

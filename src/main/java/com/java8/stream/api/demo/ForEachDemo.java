@@ -1,4 +1,4 @@
-package com.java8.stream.demo;
+package com.java8.stream.api.demo;
 
 import java.util.Arrays;
 import java.util.HashMap;

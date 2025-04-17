@@ -71,6 +71,15 @@ public class SortListDemo {
 		Collections.sort(employees, (o1,o2)->(int)(o2.getSalary()-o1.getSalary()));
 		employees.stream().forEach(e -> System.out.println(e));
 		
+		
+		//direct sort
+		employees.stream().sorted((o1, o2) -> (int) (o1.getSalary()-o2.getSalary())).forEach(System.out::println);
+		
+		//further optimisation:
+		System.out.println("Optimised - comparing");
+		employees.stream().sorted(Comparator.comparing(emp -> emp.getSalary())).forEach(System.out::println);
+		
+		employees.stream().sorted(Comparator.comparing(Employee::getName)).forEach(System.out::println);
 		//Practice comparable, comparator
 		
 	}

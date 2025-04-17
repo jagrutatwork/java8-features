@@ -3,7 +3,6 @@
     *  Consumer - Predicate - Supplier *
 	************************************
 
-
    Consumer Functional interface:
    ===============================
 
@@ -19,7 +18,6 @@
 
 -- void accept(T t);
 
-
 	Predicate Functional interface:
 	===============================
 
@@ -30,7 +28,6 @@
 -- @param t is the input argument
 
 -- boolean Test(T t);
-
 
 	Supplier Functional interface
 	===============================
@@ -43,7 +40,6 @@
 
 -- T get();
 
-
 	Stream API
     ==========
     
@@ -53,22 +49,54 @@
 - A stream is not a data structure instead it takes input from the Collections, Arrays, or I/O channels
 - Streams don't change the original data structure, they only provide the result as per the pipelined methods.
 	
+	Map and FlatMap
+	===============
 	
+- Java8 Stream API provides map() and flatMap() method. 
+- Both these methods are intermediate methods and returns another streams as part of the output
+
+- map() method used for transformation.
+- flatMap() used for transformation & flattening
+- flatMap() -> map() + flattening
+
+	map() method -> Data transformation
+	====================================
+- map takes Stream<T> as input and returns Stream<R>
+- Stream<R> map(Stream<T> input){}
+- It's mapper function produces single value for each input value hence it is alos called One-To-One Mapping
+
+	flatMap() method -> map() + Flattening
+	======================================
+- flatMap() takes Stream<Stream<T>> as input and return Stream<R>
+- Stream<R> map(Stream<Stream<T>> input){}
+- It's mapper function produces multiple values for each input value,
+  hence it os said to have One-To-Many mapping
+
 	
+  Data Trasformation and Flattening
+  =================================
+
+- Data transformation means converting or changing every element of a stream to some other element thereby creating
+  a whole new stream
+  Example
+  Stream.of("a", "b", "c", "d") --> [A, B, C, D]
+
+- Flattening is to convert stream of stream into single stream
+- [[1,2],[3,4],[5,6],[7,8]] --> [1, 2, 3, 4, 5, 6, 7, 8]
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+  Difference between Java8 Map() and FlatMap():
+  =============================================
+  	
+  				map()									|						flatMap()
+  ------------------------------------------------------|-----------------------------------------------------------------
+  It process stream of values.							|		It processes stream of stream of values
+  It does only mapping									|		It performs mapping as well as flatenning
+  It's mapper function produces single values for		|		It's mapper function produces multiple values for each 
+  each input value.										|		input value.		
+  It is a one-to-one mapping							| 		It is a One-to-Many Mapping
+  Data Trasformation: From Stream to Stream				|		Data Trasformation: From Stream<Stream> to Stream
+  Use this method when the mapper function is producing |		Use this method when the mapper function is producing 
+  a single value for each input value.					|		multiple values for each input value.
 	
 	
 	

@@ -1,4 +1,4 @@
-package com.jaba8.pre.functional;
+package com.java8.pre.functional;
 
 import java.util.Arrays;
 import java.util.List;
